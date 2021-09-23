@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myfunc(){
+            var a = 1;
+            var b = 2;
+            var result = a + b;
+            // document.write(result)
+            return result;
+        }
+        //d위에건 지역변수
+
+
+        // myfunc();
+        // document.write(result)
+
+        // 함수의 return값
+    
+        var result = myfunc();
+        //전역변수
+        document.write("result =", result)
+
+
+       //함수의 매개변수 
+        function add(a, b){
+            var result = a + b;
+            return result;
+        }
+
+        result = add(8, 5);
+        document.write("result =", result);
+
+    </script>
+</body>
+</html>

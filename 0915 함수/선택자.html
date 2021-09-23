@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>제이쿼리 선택자</h1>
+    <h2>heading2</h2>
+    <h3 class="heading2">heading3</h3>
+    <h4 id="heading1">heading4</h4>
+
+
+    <script>
+        $(function(){
+            //선택자, 메서드 형식
+            //전체선택자
+            $("*").css('color','red');
+            //id
+            $('#heading1').css('color','blue')
+            //class
+            $('.heading2').css('border','2px solid green');
+            //그룹
+            $('h1, h2').css('background-color', 'pink')
+
+        });
+    </script>
+    <h2 id="myh2">메소드 체이닝이란?</h2>
+    <script>
+        $(function(){
+            // $('#myh2').css('color', 'green');
+            // $('#myh2').css('background', 'yellow');
+            // $('#myh2').css('border', '2px solid black');
+            
+            
+            $('#myh2').css('color', 'green').css('background', 'yellow').css('border', '2px solid black');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <ul id="list">
+        <li>first</li>
+        <li>second</li>
+        <li>third</li>
+    </ul>
+    <script>
+        //each 반복 
+        var f = 10
+        $('#list li').each(function(){
+            console.log($(this).text());
+            $(this)
+            .css('color','red')
+            .css('font-size',f)
+            f+=10;
+        });
+        //배열 자료 돌리기
+        var ovj = [
+            {
+                area: "서울"
+            },
+            {
+                area: "부산"
+            },
+            {
+                area: "전주"
+            }
+        ]
+        //document.write(ovj[0].area);
+        $(ovj).each(function(i, ovj){
+            document.write(ovj.area);
+        })
+        //자바스크립트 
+    </script>
+<ul id="list2">
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+</ul>
+<script>
+    //index해당 요소의 배열값을 가져옴
+    $('#list2 li').click(function(){
+    var i = $(this).index();
+    console.log('index = ', i);
+    $(this).css('font-size','30px')
+    });
+</script>
+
+
+
+</body>
+</html>

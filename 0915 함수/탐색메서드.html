@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<style>
+    .parent{
+        border: 2px solid red;
+        padding: 20px;
+    }
+
+    .child{
+        border: 2px solid green;
+    }
+</style>
+
+<body>
+    
+    <ul id="list">
+        <li class="first">child1 
+            <span>child</span>
+        </li>
+        <li>child2</li>
+    </ul>
+    <div class="parent">
+        <p>부모</p>
+        <div class="child">
+            <p>자식</p>
+        </div>
+    </div>
+
+
+<h1>탐색메서드</h1>
+    <ul>
+        <li>parent-부모</li>
+        <li>children-자식</li>
+        <li>prev-이전형제</li>
+        <li>next-이전형제</li>
+        <li>siblings-형제</li>
+        <li>find-후손</li>
+    </ul>
+
+    <ul id="list2">
+        <li>형제 1</li>
+        <li class="s2">형제 2</li>
+        <li>형제 3</li>
+        <li>형제 4</li>   
+        <li>형제 5
+            <p>후손 p</p>
+        </li>        
+    </ul>
+
+    <script>
+        $(function(){
+           //현재 선택자의 부모를 선택함
+            $('.child')
+            .parent()
+            .css('color','green');
+
+        $('#list .first').children().css('color','blue');
+        });
+
+        $(function(){
+            //prev 이전 형제
+            $(".s2").prev().css('color', 'red')
+            //next 다음 형제
+            $(".s2").next().css('color', 'blue')
+            
+            //next 다음 다음 형제
+            var style = {
+                'color' : 'green',
+                'background-color' : 'pink'
+            }
+            $(".s2")
+            .next()
+            .next()
+            .css(style)
+
+            // siblings
+            $(".s2").siblings().css('font-size', '12px')
+            //find
+            $(".s2").next().next().next().css('border', '2px solid black')
+            
+            $("#list2").find('p').css('color', 'pink')
+        })
+
+    </script>
+</body>
+</html>
